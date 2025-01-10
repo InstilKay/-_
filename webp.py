@@ -1,9 +1,6 @@
 
 import streamlit as st
 import pandas as pd
-import time
-import requests
-from bs4 import BeautifulSoup
 table1=pd.DataFrame({"RPA":[1,2,3,4,5,6,7],"Flows":[11,12,13,14,15,16,17]})
 st.title                ("AUTOMATION")
 st.subheader("Traning for developers")
