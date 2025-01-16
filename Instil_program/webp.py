@@ -126,7 +126,7 @@ st.header("RPA DATA AND PERFORMANCE 2024")
 #st.dataframe(table1, use_container_width=True)
 html_table = table1.to_html(index=False)
 st.markdown(html_table, unsafe_allow_html=True)
-csv = table1_no_index.to_csv(index=False)
+csv=table1_no_index.to_csv(index=False)
 st.download_button(
     label="Download as CSV",
     data=csv,
