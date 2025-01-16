@@ -107,17 +107,13 @@ st.markdown("---")
 st.caption("Outline")
 st.markdown("---")
 st.subheader("PERSISTENT ERRORS")
-st.metric(label="Issues",value=""" Timeout Issues: Modules not running within scheduled time/ File with wrong parameters
- 
-Data Access Errors: Unable to launch excel / read open items/Unable to query the database.
- 
-Output Folder Errors: Error message indicating that the output folder was not created.
- 
-Production Environment Issues: Power automate desktop expiry.
- 
-Module Delays:modules queuing  causing delays.
+st.markdown("""**Timeout Issues** :  Modules not running within scheduled time  File with wrong parameters<br>
+<br>**Data Access Errors** : Unable to launch excel / read open items / Unable to query the database.<br>
+<br>**Output Folder Errors** : Error message indicating that the output folder was not created.<br>
+<br>**Production Environment Issues** : Power automate desktop expiry.<br>
+<br>**Module Delays :** Modules queuing causing delays.<br>
+<br>**File Naming Errors :** Naming convention of files submitted by officers.""", unsafe_allow_html=True)
 
-File Naming Errors: Naming convention of files submitted by officers. """)
 st.metric(label="RPA Processes",value="35")
 st.markdown("---")
 st.header("RPA DATA AND PERFORMANCE 2024")
