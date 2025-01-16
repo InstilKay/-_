@@ -20,7 +20,6 @@ def converter(value):
     return t_s
 st.table(table1)
 st.image("dp.png")
-st.image(os.path.abspath("dp.png"))
 st.video("sort.mp4")
 state=st.checkbox("Do you want email",value=True)
 if state:
