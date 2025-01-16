@@ -98,13 +98,26 @@ table1=pd.DataFrame({"Flow Modules":["Ezwich Reconciliation",
 233
 ]})
 st.title                ("RPA AUTOMATION")
-st.header("outline programes")
+st.header("")
 st.text("")
 st.subheader("Review On RPA Chart")
 st.markdown("We are focusing on successful runs, failed runs, the total number of runs, the reasons for failures, the approach taken to resolve them, and the proposed way forward.     ")
 st.markdown("[Google](https://www.google.com)")
 st.markdown("---")
-st.caption("new updates")
+st.caption("Outline")
+st.markdown("---")
+st.subheader("PERSISTENT ERRORS")
+st.metric(label="Issues",value="Timeout Issues: Modules not running within scheduled time/ File with wrong parameters
+ 
+Data Access Errors: Unable to launch excel / read open items/Unable to query the database.
+ 
+Output Folder Errors: Error message indicating that the output folder was not created.
+ 
+Production Environment Issues: Power automate desktop expiry.
+ 
+Module Delays:modules queuing  causing delays.
+
+File Naming Errors: Naming convention of files submitted by officers.")
 st.metric(label="RPA Processes",value="35")
 st.markdown("---")
 st.header("RPA DATA AND PERFORMANCE 2024")
