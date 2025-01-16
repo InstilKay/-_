@@ -115,6 +115,13 @@ st.markdown("""**Timeout Issues** :  Modules not running within scheduled time  
 <br>**Module Delays :** Modules queuing causing delays.<br>
 <br>**File Naming Errors :** Naming convention of files submitted by officers.""", unsafe_allow_html=True)
 st.markdown("---")
+st.subheader("SOLUTIONS TO ENCOUNTERED PROBLEMS")
+st.markdown("""Implemented monitoring dashboard to detect and display duration and completion.<br>
+<br>Implemented error handling, incident response and logging of issues to keep records of problems faced on a daily base.<br>
+<br>Automated folder creation as part of the workflow process.<br>
+<br>Reprioritize module execution based on criticality.
+Educated officers on file naming conventions to minimize errors.""", unsafe_allow_html=True)
+st.markdown("---")
 st.header("RPA DATA AND PERFORMANCE 2024")
 st.table(table1)
 st.image("Instilkay/-_/Instil_program/dp.png")
