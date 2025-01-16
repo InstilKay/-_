@@ -97,11 +97,11 @@ table1=pd.DataFrame({"Flow Modules":["Ezwich Reconciliation",
 12,
 233
 ]})
-st.title                ("AUTOMATION")
-st.subheader("Traning for developers")
+st.title                ("RPA AUTOMATION")
+st.subheader("Review On RPA Chart")
 st.header("outline programes")
-st.text("These program is might to train all new developer to be come the best in the industry")
-st.markdown("**Hello team** begin your training     ")
+st.text("")
+st.markdown("We are focusing on successful runs, failed runs, the total number of runs, the reasons for failures, the approach taken to resolve them, and the proposed way forward.     ")
 st.markdown("[Google](https://www.google.com)")
 st.markdown("---")
 st.caption("new updates")
