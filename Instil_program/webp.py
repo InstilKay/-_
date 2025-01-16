@@ -124,7 +124,7 @@ Educated officers on file naming conventions to minimize errors.""", unsafe_allo
 st.markdown("---")
 st.header("RPA DATA AND PERFORMANCE 2024")
 #st.dataframe(table1, use_container_width=True)
-#html_table = table1.to_html(index=False)
+html_table = table1.to_html(index=False)
 st.markdown(html_table, unsafe_allow_html=True)
 #st.table(html_table)
 st.image("Breadcrumbs-_/Instil_program/dp.png")
