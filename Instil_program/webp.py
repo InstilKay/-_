@@ -126,6 +126,12 @@ st.header("RPA DATA AND PERFORMANCE 2024")
 #st.dataframe(table1, use_container_width=True)
 html_table = table1.to_html(index=False)
 st.markdown(html_table, unsafe_allow_html=True)
+st.download_button(
+    label="Download as CSV",
+    data=csv,
+    file_name="table_without_index.csv",
+    mime="text/csv"
+)
 #st.table(html_table)
 st.image("Instil_program/dp.png")
 #st.video("Instil_program/sort.mp4")
