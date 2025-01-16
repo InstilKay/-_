@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 import os 
-table1=pd.DataFrame({"**Flow Modules**":["Ezwich Reconciliation",
+table1=pd.DataFrame({"Flow Modules":["Ezwich Reconciliation",
 "GHQR Inbound Reconciliation", 
 "GHQR Outbound Reconciliation",
 "GIP Reconciliation",
@@ -48,7 +48,7 @@ table1=pd.DataFrame({"**Flow Modules**":["Ezwich Reconciliation",
 93,
 70,
 82,
-3499],"**Successful**":[139,
+3499],"Successful":[139,
 95,
 98,
 124,
@@ -72,7 +72,7 @@ table1=pd.DataFrame({"**Flow Modules**":["Ezwich Reconciliation",
 62,
 70,
 3266
-],"**FAILED**":[5,
+],"FAILED":[5,
 12,
 11,
 20,
