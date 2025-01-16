@@ -3,7 +3,102 @@ import streamlit as st
 import pandas as pd
 import time
 import os 
-table1=pd.DataFrame({"RPA":[1,2,3,4,5,6,7],"Flows":[11,12,13,14,15,16,17]})
+table1=pd.DataFrame({"Flow Modules":["Ezwich Reconciliation",
+"GHQR Inbound Reconciliation", 
+"GHQR Outbound Reconciliation",
+"GIP Reconciliation",
+"MasterCard OFF-US Reconciliation",
+"ROU Reconciliation",
+"VISA OFF-US Reconciliation",
+"W2A Reconciliation",
+"W2S Reconciliation",
+"A2W Reconciliation",
+"Yellosave Reconciliation" ,
+"EZWICH Clearing",
+"GHQR Settlement",
+"GIP_Clearing",
+"Mastercard_Off_Us_Clearing",
+"Visa_Bulk_Settlement",
+"Visa_Off_Us_Clearing",
+"Yellosave Reversal",
+"MoMo On POS (Blue Penguin)",
+"ROU Preparation",
+"W2A/W2S Settlement",
+"Express Transit Callover Report",
+"Transit Callover Report",
+],"Total":[144,
+107,
+109,
+144,
+153,
+516,
+184,
+84,
+87,
+88,
+218,
+166,
+177,
+114,
+151,
+177,
+147,
+181,
+150,
+157,
+93,
+70,
+82,
+3499],"Successful"[139,
+95,
+98,
+124,
+149,
+504,
+180,
+71,
+78,
+78,
+194,
+156,
+166,
+98,
+146,
+168,
+141,
+174,
+144,
+149,
+82,
+62,
+70,
+3266
+
+],"FAILED":[5,
+12,
+11,
+20,
+4,
+12,
+4,
+13,
+9,
+10,
+24,
+10,
+11,
+16,
+5,
+9,
+6,
+7,
+6,
+8,
+11,
+8,
+12,
+233
+]})
 st.title                ("AUTOMATION")
 st.subheader("Traning for developers")
 st.header("outline programes")
@@ -14,9 +109,6 @@ st.markdown("---")
 st.caption("new updates")
 st.metric(label="RPA Processes",value="34")
 st.markdown("---")
-def converter(value):
-    m,s,mm=value.split(":")
-    t_s=int(m)*60+int(s)+int(mm)/1000
     return t_s
 st.table(table1)
 st.image("Instilkay/-_/Instil_program/dp.png")
