@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import time
@@ -73,7 +72,6 @@ table1=pd.DataFrame({"Flow Modules":["Ezwich Reconciliation",
 62,
 70,
 3266
-
 ],"FAILED":[5,
 12,
 11,
