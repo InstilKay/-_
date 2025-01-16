@@ -1,4 +1,4 @@
-import streamlit as st
+Vimport streamlit as st
 import pandas as pd
 import time
 import os 
@@ -24,7 +24,7 @@ table1=pd.DataFrame({"Flow Modules":["Ezwich Reconciliation",
 "ROU Preparation",
 "W2A/W2S Settlement",
 "Express Transit Callover Report",
-"Transit Callover Report"
+"Transit Callover Report","Total"
 ],"Total":[144,
 107,
 109,
