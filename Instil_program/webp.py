@@ -19,7 +19,7 @@ def converter(value):
     t_s=int(m)*60+int(s)+int(mm)/1000
     return t_s
 st.table(table1)
-st.image("Breadcrumbs-_/Instil_program/dp.png")
+st.image("Instilkay/-_/Instil_program/dp.png")
 st.video("sort.mp4")
 state=st.checkbox("Do you want email",value=True)
 if state:
