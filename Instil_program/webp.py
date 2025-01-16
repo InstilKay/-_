@@ -104,7 +104,8 @@ st.subheader("Review On RPA Chart")
 st.markdown("We are focusing on successful runs, failed runs, the total number of runs, the reasons for failures, the approach taken to resolve them, and the proposed way forward.     ")
 st.markdown("[Google](https://www.google.com)")
 st.markdown("---")
-st.caption("Outline")
+st.caption("All Processes")
+st.metric(label="RPA Processes",value="35")
 st.markdown("---")
 st.subheader("PERSISTENT ERRORS")
 st.markdown("""**Timeout Issues** :  Modules not running within scheduled time  File with wrong parameters<br>
@@ -113,8 +114,6 @@ st.markdown("""**Timeout Issues** :  Modules not running within scheduled time  
 <br>**Production Environment Issues** : Power automate desktop expiry.<br>
 <br>**Module Delays :** Modules queuing causing delays.<br>
 <br>**File Naming Errors :** Naming convention of files submitted by officers.""", unsafe_allow_html=True)
-
-st.metric(label="RPA Processes",value="35")
 st.markdown("---")
 st.header("RPA DATA AND PERFORMANCE 2024")
 st.table(table1)
