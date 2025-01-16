@@ -98,9 +98,9 @@ table1=pd.DataFrame({"Flow Modules":["Ezwich Reconciliation",
 233
 ]})
 st.title                ("RPA AUTOMATION")
-st.subheader("Review On RPA Chart")
 st.header("outline programes")
 st.text("")
+st.subheader("Review On RPA Chart")
 st.markdown("We are focusing on successful runs, failed runs, the total number of runs, the reasons for failures, the approach taken to resolve them, and the proposed way forward.     ")
 st.markdown("[Google](https://www.google.com)")
 st.markdown("---")
