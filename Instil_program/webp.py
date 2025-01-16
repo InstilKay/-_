@@ -109,7 +109,6 @@ st.markdown("---")
 st.caption("new updates")
 st.metric(label="RPA Processes",value="34")
 st.markdown("---")
-    return t_s
 st.table(table1)
 st.image("Instilkay/-_/Instil_program/dp.png")
 st.video("sort.mp4")
