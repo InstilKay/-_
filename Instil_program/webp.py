@@ -128,7 +128,7 @@ html_table = table1.to_html(index=False)
 st.markdown(html_table, unsafe_allow_html=True)
 #st.table(html_table)
 st.image("Instil_program/dp.png")
-st.video("sort.mp4")
+st.video("Instil_program/sort.mp4")
 state=st.checkbox("Do you want email",value=True)
 if state:
     st.write("done")
