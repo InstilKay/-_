@@ -1,5 +1,5 @@
 import streamlit as st
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 st.title                ("UNSUPERVISED MACHINE LEARNING")
 st.subheader("ASSIGNMENT")
 st.subheader("K MEANS")
