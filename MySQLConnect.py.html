@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>MySQLConnect.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MySQLConnect.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">streamlit </span><span class="s0">as </span><span class="s1">st</span>
+<span class="s0">import </span><span class="s1">mysql</span><span class="s2">.</span><span class="s1">connector</span>
+<span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+
+<span class="s3"># MySQL connection settings</span>
+
+<span class="s1">config </span><span class="s2">= {</span>
+    <span class="s4">'user'</span><span class="s2">: </span><span class="s4">'root'</span><span class="s2">,</span>
+    <span class="s4">'password'</span><span class="s2">: </span><span class="s4">''</span><span class="s2">,</span>
+    <span class="s4">'host'</span><span class="s2">: </span><span class="s4">'localhost'</span><span class="s2">,</span>
+    <span class="s4">'port'</span><span class="s2">: </span><span class="s4">'3306'</span><span class="s2">,</span>
+    <span class="s4">'database'</span><span class="s2">: </span><span class="s4">'SchoolDB'</span>
+<span class="s2">}</span>
+
+<span class="s3"># Connection to the MySQL (CREATING THE PATH)</span>
+<span class="s1">cnx</span><span class="s2">=</span><span class="s1">mysql</span><span class="s2">.</span><span class="s1">connector</span><span class="s2">.</span><span class="s1">connect</span><span class="s2">(**</span><span class="s1">config</span><span class="s2">)</span>
+
+<span class="s3">#create cursor object</span>
+<span class="s1">cursor</span><span class="s2">=</span><span class="s1">cnx</span><span class="s2">.</span><span class="s1">cursor</span><span class="s2">()</span>
+
+<span class="s3">#SQL QUery (DML)</span>
+<span class="s1">query1</span><span class="s2">=</span><span class="s4">&quot;SELECT* FROM departments&quot;</span>
+<span class="s1">cursor</span><span class="s2">.</span><span class="s1">execute</span><span class="s2">(</span><span class="s1">query1</span><span class="s2">)</span>
+
+<span class="s3">#cursor fetches data based on the query</span>
+<span class="s1">row</span><span class="s2">=</span><span class="s1">cursor</span><span class="s2">.</span><span class="s1">fetchall</span><span class="s2">()</span>
+<span class="s3">#get columns</span>
+<span class="s1">column_name</span><span class="s2">=[</span><span class="s1">desc</span><span class="s2">[</span><span class="s5">0</span><span class="s2">] </span><span class="s0">for </span><span class="s1">desc </span><span class="s0">in </span><span class="s1">cursor</span><span class="s2">.</span><span class="s1">description</span><span class="s2">]</span>
+
+<span class="s3">#Create Pandas data to load the data onto the interface</span>
+<span class="s1">df</span><span class="s2">=</span><span class="s1">pd</span><span class="s2">.</span><span class="s1">DataFrame</span><span class="s2">(</span><span class="s1">row</span><span class="s2">, </span><span class="s1">columns</span><span class="s2">=</span><span class="s1">column_name</span><span class="s2">)</span>
+
+<span class="s1">st</span><span class="s2">.</span><span class="s1">write</span><span class="s2">(</span><span class="s4">&quot;Data from Department Table:&quot;</span><span class="s2">)</span>
+<span class="s1">st</span><span class="s2">.</span><span class="s1">write</span><span class="s2">(</span><span class="s1">df</span><span class="s2">)</span>
+
+<span class="s3">#Creating a form</span>
+<span class="s1">st</span><span class="s2">.</span><span class="s1">write</span><span class="s2">(</span><span class="s4">&quot;Insert Data into department tabel&quot;</span><span class="s2">)</span>
+
+<span class="s0">with </span><span class="s1">st</span><span class="s2">.</span><span class="s1">form</span><span class="s2">(</span><span class="s4">&quot;insert form&quot;</span><span class="s2">):</span>
+    <span class="s1">department_id</span><span class="s2">=</span><span class="s1">st</span><span class="s2">.</span><span class="s1">text_input</span><span class="s2">(</span><span class="s4">&quot;Department ID&quot;</span><span class="s2">)</span>
+    <span class="s1">department_name</span><span class="s2">=</span><span class="s1">st</span><span class="s2">.</span><span class="s1">text_input</span><span class="s2">(</span><span class="s4">&quot;Department Name&quot;</span><span class="s2">)</span>
+    <span class="s1">user_id</span><span class="s2">=</span><span class="s1">st</span><span class="s2">.</span><span class="s1">text_input</span><span class="s2">(</span><span class="s4">&quot;User ID&quot;</span><span class="s2">)</span>
+    <span class="s1">submit_button</span><span class="s2">=</span><span class="s1">st</span><span class="s2">.</span><span class="s1">form_submit_button</span><span class="s2">(</span><span class="s4">&quot;Insert Data&quot;</span><span class="s2">)</span>
+
+    <span class="s0">if </span><span class="s1">submit_button</span><span class="s2">:</span>
+        <span class="s0">try</span><span class="s2">:</span>
+            <span class="s1">query2</span><span class="s2">=</span><span class="s4">&quot;INSERT INTO departments (id, department_name, user_id) VALUES (%s,%s,%s)&quot;</span>
+            <span class="s1">cursor</span><span class="s2">.</span><span class="s1">execute</span><span class="s2">(</span><span class="s1">query2</span><span class="s2">, (</span><span class="s1">department_id</span><span class="s2">, </span><span class="s1">department_name</span><span class="s2">, </span><span class="s1">user_id</span><span class="s2">))</span>
+            <span class="s1">cnx</span><span class="s2">.</span><span class="s1">commit</span><span class="s2">()</span>
+            <span class="s1">st</span><span class="s2">.</span><span class="s1">success</span><span class="s2">(</span><span class="s4">&quot;Data inserted successfully&quot;</span><span class="s2">)</span>
+        <span class="s0">except </span><span class="s1">mysql</span><span class="s2">.</span><span class="s1">connector</span><span class="s2">.</span><span class="s1">Error </span><span class="s0">as </span><span class="s1">err</span><span class="s2">:</span>
+            <span class="s1">st</span><span class="s2">.</span><span class="s1">error</span><span class="s2">(</span><span class="s4">f'Error inserting data: </span><span class="s0">{</span><span class="s1">err</span><span class="s0">}</span><span class="s4">'</span><span class="s2">)</span>
+
+<span class="s1">cursor</span><span class="s2">.</span><span class="s1">close</span><span class="s2">()</span>
+<span class="s1">cnx</span><span class="s2">.</span><span class="s1">close</span><span class="s2">()</span>
+
+<span class="s1">st</span><span class="s2">.</span><span class="s1">text_input</span><span class="s2">(</span><span class="s4">&quot;Paa Kwesi&quot;</span><span class="s2">)</span>
+<span class="s1">st</span><span class="s2">.</span><span class="s1">text_area</span><span class="s2">(</span><span class="s4">&quot;Enter text&quot;</span><span class="s2">)</span>
+<span class="s1">st</span><span class="s2">.</span><span class="s1">date_input</span><span class="s2">(</span><span class="s4">&quot;Select Date&quot;</span><span class="s2">)</span>
+</pre>
+</body>
+</html>
